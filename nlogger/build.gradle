@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
-
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'org.naqla.nlogger'
@@ -10,8 +11,13 @@ ext {
 
 
     publishedGroupId = 'org.naqla.nlogger'
-    artifact = 'NAQLA LOGGER'
+    artifact = 'NLOGGER'
     libraryVersion  = '1.0.0.0'
+
+    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
+
+    siteUrl = 'https://github.com/MGRagab/nlogger'
+    gitUrl = 'https://github.com/MGRagab/nlogger.git'
 
 
     developerId = 'mgragab'
@@ -21,6 +27,13 @@ ext {
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
+
+    user = properties.getProperty("bintray.user")
+    apiKey = properties.getProperty("bintray.apikey")
+
+    repoName = 'NLOGGER'
+    packageName = 'org.naqla.nlogger'
+
 }
 
 android {
