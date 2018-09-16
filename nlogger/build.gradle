@@ -4,11 +4,16 @@ apply plugin: 'com.jfrog.bintray'
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'org.naqla.nlogger'
     libraryName = 'NLOGGER'
 
+    PUBLISH_GROUP_ID = 'org.naqla.nlogger'
+    PUBLISH_ARTIFACT_ID = 'NLOGGER'
+    PUBLISH_VERSION = '1.0.0.0'
 
     publishedGroupId = 'org.naqla.nlogger'
     artifact = 'NLOGGER'
@@ -28,11 +33,7 @@ ext {
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 
-    user = properties.getProperty("bintray.user")
-    apiKey = properties.getProperty("bintray.apikey")
 
-    repoName = 'NLOGGER'
-    packageName = 'org.naqla.nlogger'
 
 }
 
@@ -68,6 +69,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
-
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
 
 
