@@ -1,46 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
-
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'org.naqla.nlogger'
-    libraryName = 'NLOGGER'
-
-    PUBLISH_GROUP_ID = 'org.naqla.nlogger'
-    PUBLISH_ARTIFACT_ID = 'NLOGGER'
-    PUBLISH_VERSION = '1.0.0.0'
-
-    publishedGroupId = 'org.naqla.nlogger'
-    artifact = 'NLOGGER'
-    libraryVersion  = '1.0.0.0'
-
-    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
-
-    siteUrl = 'https://github.com/MGRagab/nlogger'
-    gitUrl = 'https://github.com/MGRagab/nlogger.git'
-
-
-    developerId = 'mgragab'
-    developerName = 'Mohammed Ragab'
-    developerEmail = 'mohamed.gamal091@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-
-
-
-}
-
 android {
     compileSdkVersion 27
-
-
 
     defaultConfig {
         minSdkVersion 15
@@ -69,6 +29,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
 
 
